@@ -11,7 +11,7 @@ export const projects: Project[] = [
     slug: "my-first-project",
     title: "My First Project",
     shortDescription: "Short summary of what this project is about.",
-    content: `# My First Project
+    content: `My First Project
 
 Describe what the project does, why you built it, and any interesting technical details.
 

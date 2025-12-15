@@ -7,8 +7,8 @@ export default function Home() {
     <div className={styles.page}>
       <aside className={styles.sidebar}>
         <div className={styles.brand}>
-          <h1 className={styles.name}>Your Name</h1>
-          <p className={styles.role}>Developer / Designer</p>
+          <h1 className={styles.name}>Aapo Lemettinen</h1>
+          <p className={styles.role}>Student at Aalto University</p>
         </div>
         <nav className={styles.nav}>
           <h2 className={styles.navTitle}>Projects</h2>
@@ -31,17 +31,17 @@ export default function Home() {
         <section className={styles.hero}>
           <h2>Welcome to my portfolio</h2>
           <p>
-            This is a place where I collect my projects, experiments, and
-            documentation. Use the sidebar to open any project and read more
-            about it.
+            I document past projects here. Use the sidebar to open interesting
+            project documentations.
           </p>
         </section>
 
         <section className={styles.about}>
           <h3>About me</h3>
           <p>
-            Write a short introduction about who you are, what you work on, and
-            what kind of projects you like to build.
+            I am an information technology student at Aalto University. I am
+            planning to change to automation and robotics, so my projects are a
+            bit robotics oriented.
           </p>
         </section>
       </main>

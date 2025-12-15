@@ -25,8 +25,8 @@ export default function ProjectPage({ params }: Props) {
     <div className={styles.page}>
       <aside className={styles.sidebar}>
         <div className={styles.brand}>
-          <h1 className={styles.name}>Your Name</h1>
-          <p className={styles.role}>Developer / Designer</p>
+          <h1 className={styles.name}>Aapo Lemettinen</h1>
+          <p className={styles.role}>Student at Aalto University</p>
         </div>
         <nav className={styles.nav}>
           <h2 className={styles.navTitle}>Projects</h2>
