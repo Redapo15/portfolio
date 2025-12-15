@@ -7,9 +7,10 @@ type Props = {
   params: { slug: string };
 };
 
-export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
-}
+// Render this route dynamically on each request instead of relying on
+// pre-generated params. This avoids any mismatch between build-time
+// and runtime that could cause a 404.
+export const dynamic = "force-dynamic";
 
 export default function ProjectPage({ params }: Props) {
   const project = getProjectBySlug(params.slug);
