@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { getProjectBySlug, projects } from "@/projects";
 import styles from "./project.module.css";
 
@@ -16,7 +15,41 @@ export default function ProjectPage({ params }: Props) {
   const project = getProjectBySlug(params.slug);
 
   if (!project) {
-    return notFound();
+    return (
+      <div className={styles.page}>
+        <aside className={styles.sidebar}>
+          <div className={styles.brand}>
+            <h1 className={styles.name}>Aapo Lemettinen</h1>
+            <p className={styles.role}>Student at Aalto University</p>
+          </div>
+          <nav className={styles.nav}>
+            <h2 className={styles.navTitle}>Projects</h2>
+            <ul className={styles.projectList}>
+              {projects.map((p) => (
+                <li key={p.slug}>
+                  <Link href={`/projects/${p.slug}`}>
+                    <span className={styles.projectTitle}>{p.title}</span>
+                    <span className={styles.projectSubtitle}>
+                      {p.shortDescription}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <Link href="/" className={styles.backHome}>
+              ← Back to overview
+            </Link>
+          </nav>
+        </aside>
+
+        <main className={styles.main}>
+          <header className={styles.header}>
+            <h1>Project not found</h1>
+            <p>The project you are looking for does not exist.</p>
+          </header>
+        </main>
+      </div>
+    );
   }
 
   // Very small Markdown-like rendering: just support line breaks and headings.
