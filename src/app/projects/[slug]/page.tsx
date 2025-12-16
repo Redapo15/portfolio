@@ -11,7 +11,11 @@ type Props = {
 // and runtime that could cause a 404.
 
 export default function ProjectPage({ params }: Props) {
-  const slug = decodeURIComponent(params.slug);
+  const rawSlug = params.slug;
+  const slug = Array.isArray(rawSlug)
+    ? rawSlug.join("/")
+    : decodeURIComponent(rawSlug);
+
   console.log("params.slug:", params.slug);
   console.log("decoded slug:", slug);
   console.log("available slugs:", projects.map(p => p.slug));
