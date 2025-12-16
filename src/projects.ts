@@ -33,7 +33,7 @@ export const projects: Project[] = [
   {
     slug: "koura-project",
     title: "KOURA Project",
-    shortDescription: "electronics workshop course project 2025",
+    shortDescription: "Award winning electronics workshop course project 2025",
     content: `This project is documented in detail in the PDF below.`,
     pdfUrl: "/KOURA-project.pdf",
   },
