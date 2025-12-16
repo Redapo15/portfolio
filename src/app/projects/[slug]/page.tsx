@@ -1,9 +1,9 @@
 import Link from "next/link";
-import { getProjectBySlug, projects } from "../../../projects";
+import { getProjectBySlug, projects } from "@/projects";
 import styles from "./project.module.css";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }> | { slug: string };
 };
 
 // Render this route dynamically on each request instead of relying on
@@ -12,13 +12,12 @@ type Props = {
 
 export const dynamic = "force-dynamic";
 
-export default function ProjectPage({ params }: Props) {
-  const slug = decodeURIComponent(params.slug);
-
-  console.log("slug:", slug);
-  console.log("available slugs:", projects.map(p => p.slug));
-
-  const project = projects.find(p => p.slug === slug);
+export default async function ProjectPage({ params }: Props) {
+  const resolvedParams = await Promise.resolve(params);
+  // Decode URL-encoded slugs (e.g., "my-project" stays "my-project", but handles edge cases)
+  const slug = decodeURIComponent(resolvedParams.slug);
+  
+  const project = getProjectBySlug(slug);
 
 
 
