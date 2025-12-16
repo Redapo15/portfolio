@@ -98,71 +98,70 @@ export default async function ProjectPage({ params }: Props) {
         </nav>
       </aside>
 
-      <main className={styles.main}>
-        <header className={styles.header}>
-          <h1>{project.title}</h1>
-          <p>{project.shortDescription}</p>
-        </header>
-
-        {project.pdfUrl && (
-          <section className={styles.article}>
-            <h2 className={styles.h2}>Documentation (PDF)</h2>
-            <p className={styles.p}>
-              You can read the full documentation below or{" "}
-              <a href={project.pdfUrl} target="_blank" rel="noopener noreferrer">
-                open it in a new tab
+      <main className={project.pdfUrl ? styles.mainPdf : styles.main}>
+        {project.pdfUrl ? (
+          <>
+            <div className={styles.pdfHeader}>
+              <div>
+                <h1 className={styles.pdfTitle}>{project.title}</h1>
+                <p className={styles.pdfSubtitle}>{project.shortDescription}</p>
+              </div>
+              <a
+                href={project.pdfUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={styles.pdfLink}
+              >
+                Open in new tab ↗
               </a>
-              .
-            </p>
-            <object
-              data={project.pdfUrl}
-              type="application/pdf"
-              width="100%"
-              height="600px"
-            >
-              <p>
-                Your browser cannot display the PDF.{" "}
-                <a href={project.pdfUrl} target="_blank" rel="noopener noreferrer">
-                  Click here to download it.
-                </a>
-              </p>
-            </object>
-          </section>
+            </div>
+            <iframe
+              src={`${project.pdfUrl}#toolbar=1&navpanes=1&scrollbar=1`}
+              className={styles.pdfViewer}
+              title={`${project.title} Documentation`}
+            />
+          </>
+        ) : (
+          <>
+            <header className={styles.header}>
+              <h1>{project.title}</h1>
+              <p>{project.shortDescription}</p>
+            </header>
+            <article className={styles.article}>
+              {lines.map((line, index) => {
+                if (line.startsWith("# ")) {
+                  return (
+                    <h2 key={index} className={styles.h2}>
+                      {line.replace(/^# /, "")}
+                    </h2>
+                  );
+                }
+                if (line.startsWith("## ")) {
+                  return (
+                    <h3 key={index} className={styles.h3}>
+                      {line.replace(/^## /, "")}
+                    </h3>
+                  );
+                }
+                if (line.startsWith("- ")) {
+                  return (
+                    <li key={index} className={styles.li}>
+                      {line.replace(/^- /, "")}
+                    </li>
+                  );
+                }
+                if (line.trim() === "") {
+                  return <br key={index} />;
+                }
+                return (
+                  <p key={index} className={styles.p}>
+                    {line}
+                  </p>
+                );
+              })}
+            </article>
+          </>
         )}
-
-        <article className={styles.article}>
-          {lines.map((line, index) => {
-            if (line.startsWith("# ")) {
-              return (
-                <h2 key={index} className={styles.h2}>
-                  {line.replace(/^# /, "")}
-                </h2>
-              );
-            }
-            if (line.startsWith("## ")) {
-              return (
-                <h3 key={index} className={styles.h3}>
-                  {line.replace(/^## /, "")}
-                </h3>
-              );
-            }
-            if (line.startsWith("- ")) {
-              return (
-                <li key={index} className={styles.li}>
-                  {line.replace(/^- /, "")}
-                </li>
-              );
-            }
-            if (line.trim() === "") {
-              return <br key={index} />;
-            }
-            return (
-              <p key={index} className={styles.p}>
-                {line}
-              </p>
-            );
-          })}
-        </article>
       </main>
     </div>
   );
