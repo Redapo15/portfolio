@@ -20,7 +20,11 @@ export default function ProjectPage({ params }: Props) {
   console.log("decoded slug:", slug);
   console.log("available slugs:", projects.map(p => p.slug));
 
-  const project = getProjectBySlug(slug);
+  const project = projects.find((p) => {
+  console.log("COMPARE:", `"${p.slug}" === "${slug}"`, p.slug === slug);
+  return p.slug === slug;
+  });
+
 
 
   if (!project) {
