@@ -10,20 +10,16 @@ type Props = {
 // pre-generated params. This avoids any mismatch between build-time
 // and runtime that could cause a 404.
 
-export default function ProjectPage({ params }: Props) {
-  const rawSlug = params.slug;
-  const slug = Array.isArray(rawSlug)
-    ? rawSlug.join("/")
-    : decodeURIComponent(rawSlug);
+export const dynamic = "force-dynamic";
 
-  console.log("params.slug:", params.slug);
-  console.log("decoded slug:", slug);
+export default function ProjectPage({ params }: Props) {
+  const slug = decodeURIComponent(params.slug);
+
+  console.log("slug:", slug);
   console.log("available slugs:", projects.map(p => p.slug));
 
-  const project = projects.find((p) => {
-  console.log("COMPARE:", `"${p.slug}" === "${slug}"`, p.slug === slug);
-  return p.slug === slug;
-  });
+  const project = projects.find(p => p.slug === slug);
+
 
 
 
