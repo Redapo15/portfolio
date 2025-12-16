@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { getProjectBySlug, projects } from "@/projects";
+import { getProjectBySlug, projects } from "../../../projects";
 import styles from "./project.module.css";
 
 type Props = {
@@ -9,7 +9,6 @@ type Props = {
 // Render this route dynamically on each request instead of relying on
 // pre-generated params. This avoids any mismatch between build-time
 // and runtime that could cause a 404.
-export const dynamic = "force-dynamic";
 
 export default function ProjectPage({ params }: Props) {
   const slug = decodeURIComponent(params.slug);
