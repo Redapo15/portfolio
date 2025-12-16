@@ -12,7 +12,13 @@ type Props = {
 export const dynamic = "force-dynamic";
 
 export default function ProjectPage({ params }: Props) {
-  const project = getProjectBySlug(params.slug);
+  const slug = decodeURIComponent(params.slug);
+  console.log("params.slug:", params.slug);
+  console.log("decoded slug:", slug);
+  console.log("available slugs:", projects.map(p => p.slug));
+
+  const project = getProjectBySlug(slug);
+
 
   if (!project) {
     return (
@@ -95,6 +101,32 @@ export default function ProjectPage({ params }: Props) {
           <h1>{project.title}</h1>
           <p>{project.shortDescription}</p>
         </header>
+
+        {project.pdfUrl && (
+          <section className={styles.article}>
+            <h2 className={styles.h2}>Documentation (PDF)</h2>
+            <p className={styles.p}>
+              You can read the full documentation below or{" "}
+              <a href={project.pdfUrl} target="_blank" rel="noopener noreferrer">
+                open it in a new tab
+              </a>
+              .
+            </p>
+            <object
+              data={project.pdfUrl}
+              type="application/pdf"
+              width="100%"
+              height="600px"
+            >
+              <p>
+                Your browser cannot display the PDF.{" "}
+                <a href={project.pdfUrl} target="_blank" rel="noopener noreferrer">
+                  Click here to download it.
+                </a>
+              </p>
+            </object>
+          </section>
+        )}
 
         <article className={styles.article}>
           {lines.map((line, index) => {
