@@ -1,0 +1,240 @@
+.page {
+  display: flex;
+  min-height: 100vh;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text",
+    "Segoe UI", sans-serif;
+  color: #0f172a;
+  background: radial-gradient(circle at top left, #0f172a, #020617 40%, #020617),
+    #020617;
+}
+
+.sidebar {
+  width: 320px;
+  max-width: 100%;
+  padding: 32px 24px;
+  border-right: 1px solid rgba(148, 163, 184, 0.2);
+  background: linear-gradient(
+      145deg,
+      rgba(15, 23, 42, 0.98),
+      rgba(15, 23, 42, 0.92)
+    ),
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.16), transparent 60%);
+  color: #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+}
+
+.role {
+  font-size: 0.9rem;
+  color: #9ca3af;
+}
+
+.navTitle {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #6b7280;
+  margin-bottom: 10px;
+}
+
+.modelList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.modelList li a {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 10px;
+  border-radius: 10px;
+  transition: background 0.18s ease, transform 0.12s ease,
+    box-shadow 0.14s ease;
+  color: inherit;
+}
+
+.modelList li a:hover {
+  background: rgba(15, 23, 42, 0.9);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.45);
+}
+
+.modelTitle {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.modelTitleActive {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #f97316;
+}
+
+.modelSubtitle {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+.backHome {
+  display: inline-block;
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+.main {
+  flex: 1;
+  padding: 32px 48px;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  color: #e5e7eb;
+}
+
+.header h1 {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.header p {
+  margin-top: 6px;
+  font-size: 0.98rem;
+  color: #9ca3af;
+}
+
+.downloadSection {
+  margin-top: 16px;
+}
+
+.downloadCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  background: linear-gradient(
+    145deg,
+    rgba(15, 23, 42, 0.95),
+    rgba(15, 23, 42, 0.85)
+  );
+  border: 1px solid rgba(148, 163, 184, 0.2);
+  border-radius: 12px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.downloadInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.downloadTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: #e5e7eb;
+}
+
+.downloadFormat {
+  font-size: 0.9rem;
+  color: #9ca3af;
+  margin: 0;
+}
+
+.downloadButton {
+  padding: 12px 24px;
+  background: linear-gradient(145deg, rgba(56, 189, 248, 0.2), rgba(56, 189, 248, 0.15));
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  border-radius: 8px;
+  color: #60a5fa;
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.downloadButton:hover {
+  background: linear-gradient(145deg, rgba(56, 189, 248, 0.3), rgba(56, 189, 248, 0.25));
+  border-color: rgba(56, 189, 248, 0.5);
+  color: #93c5fd;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+}
+
+.article {
+  margin-top: 8px;
+  line-height: 1.7;
+  font-size: 0.98rem;
+  color: #d1d5db;
+}
+
+.h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-top: 20px;
+  margin-bottom: 6px;
+}
+
+.h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin-top: 14px;
+  margin-bottom: 4px;
+}
+
+.p {
+  margin-bottom: 8px;
+}
+
+.li {
+  margin-left: 1.2rem;
+  margin-bottom: 4px;
+  list-style: disc;
+}
+
+@media (max-width: 900px) {
+  .page {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+  }
+
+  .main {
+    padding: 20px 18px 32px;
+  }
+
+  .downloadCard {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 24px;
+  }
+
+  .downloadButton {
+    width: 100%;
+    text-align: center;
+  }
+}
+
