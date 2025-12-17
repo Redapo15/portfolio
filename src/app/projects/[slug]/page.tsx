@@ -64,7 +64,7 @@ export default async function ProjectPage({ params }: Props) {
   const lines = project.content.split("\n");
 
   return (
-    <div className={styles.page}>
+    <div className={styles.page} data-pdf-page={project.pdfUrl ? "true" : undefined}>
       <aside className={styles.sidebar}>
         <div className={styles.brand}>
           <h1 className={styles.name}>Aapo Lemettinen</h1>

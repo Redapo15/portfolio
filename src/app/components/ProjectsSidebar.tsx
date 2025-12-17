@@ -45,3 +45,4 @@ export default function ProjectsSidebar({ isOpen, onClose }: Props) {
   );
 }
 
+

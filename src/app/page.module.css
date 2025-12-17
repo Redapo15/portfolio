@@ -115,6 +115,20 @@
   max-width: 38rem;
 }
 
+.heroTextMobile {
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .heroTextDesktop {
+    display: none;
+  }
+
+  .heroTextMobile {
+    display: block;
+  }
+}
+
 .about {
   display: flex;
   flex-direction: column;

@@ -30,9 +30,12 @@ export default function Home() {
       <main className={styles.main}>
         <section className={styles.hero}>
           <h2>Welcome to my portfolio</h2>
-          <p>
+          <p className={styles.heroTextDesktop}>
             I document past projects here. Use the sidebar to open interesting
             project documentations.
+          </p>
+          <p className={styles.heroTextMobile}>
+            I document past projects here. Open projects sidebar from the button on the left to read interesting project documentations.
           </p>
         </section>
 
@@ -41,7 +44,7 @@ export default function Home() {
           <p>
             I am an information technology student at Aalto University. I am
             planning to change to automation and robotics, so my projects are a
-            bit robotics oriented. Some 3d models designs I have made can be seen from opening the side panel from right.
+            bit robotics oriented. Some 3D model designs I have made can be seen from opening the side panel from right.
           </p>
         </section>
       </main>

@@ -56,19 +56,22 @@
   line-height: 1.4;
 }
 
+
 @media (max-width: 900px) {
   .toggleButton {
-    top: auto;
-    bottom: 80px;
+    top: 0;
     right: 0;
     transform: none;
-    min-height: 100px;
-    padding: 12px 6px;
-    font-size: 0.7rem;
+    min-height: 60px;
+    width: 60px;
+    padding: 12px 8px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 8px;
+    border-bottom: 1px solid rgba(148, 163, 184, 0.15);
   }
 
   .toggleButton:hover {
-    transform: translateX(-4px);
+    transform: translateY(2px);
   }
 }
 

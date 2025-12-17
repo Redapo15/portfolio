@@ -32,7 +32,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "koura-project",
-    title: "KOURA Project",
+    title: "KOURA",
     shortDescription: "Award winning electronics workshop course project 2025",
     content: `This project is documented in detail in the PDF below.`,
     pdfUrl: "/KOURA-project.pdf",
@@ -40,7 +40,7 @@ export const projects: Project[] = [
   {
     slug: "Domino",
     title: "Dominotietokone",
-    shortDescription: "finalist project in TuKoKe science fair 2024",
+    shortDescription: "Finalist project in TuKoKe science fair 2024",
     content: `This project is documented in detail in the PDF below.`,
     pdfUrl: "/Dominotietokone.pdf",
   },
