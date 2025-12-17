@@ -216,13 +216,12 @@
   }
 
   .sidebar {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    display: none; /* Hide sidebar on mobile, use toggle button instead */
   }
 
   .main {
     padding: 20px 18px 32px;
+    width: 100%;
   }
 
   .downloadCard {

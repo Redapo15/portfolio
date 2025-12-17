@@ -41,7 +41,7 @@ export default function Home() {
           <p>
             I am an information technology student at Aalto University. I am
             planning to change to automation and robotics, so my projects are a
-            bit robotics oriented.
+            bit robotics oriented. Some 3d models designs I have made can be seen from opening the side panel from right.
           </p>
         </section>
       </main>

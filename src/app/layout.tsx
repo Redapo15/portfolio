@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import Models3DToggle from "./components/Models3DToggle";
+import ProjectsToggle from "./components/ProjectsToggle";
 
 export const metadata: Metadata = {
   title: "My Portfolio",
@@ -16,6 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         {children}
+        <ProjectsToggle />
         <Models3DToggle />
       </body>
     </html>

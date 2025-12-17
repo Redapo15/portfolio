@@ -37,6 +37,13 @@ export const projects: Project[] = [
     content: `This project is documented in detail in the PDF below.`,
     pdfUrl: "/KOURA-project.pdf",
   },
+  {
+    slug: "Domino",
+    title: "Dominotietokone",
+    shortDescription: "finalist project in TuKoKe science fair 2024",
+    content: `This project is documented in detail in the PDF below.`,
+    pdfUrl: "/Dominotietokone.pdf",
+  },
 ];
 
 export function getProjectBySlug(slug: string): Project | undefined {
