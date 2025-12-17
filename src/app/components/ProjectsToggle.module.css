@@ -60,19 +60,19 @@
 @media (max-width: 900px) {
   .toggleButton {
     display: flex; /* Show on mobile */
-    top: 0;
+    top: 80vh;
     left: 0;
-    transform: none;
+    transform: translateY(-50%);
     min-height: 60px;
     width: 60px;
     padding: 12px 8px;
-    border-top-right-radius: 0;
+    border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
     border-bottom: 1px solid rgba(148, 163, 184, 0.15);
   }
 
   .toggleButton:hover {
-    transform: translateY(2px);
+    transform: translateY(-50%) translateX(4px);
   }
 }
 
