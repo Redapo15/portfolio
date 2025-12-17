@@ -60,7 +60,7 @@
 @media (max-width: 900px) {
   .toggleButton {
     display: flex; /* Show on mobile */
-    top: 80vh;
+    top: 80%;
     left: 0;
     transform: translateY(-50%);
     min-height: 60px;

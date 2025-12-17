@@ -103,6 +103,9 @@ export default async function ProjectPage({ params }: Props) {
           <>
             <div className={styles.pdfHeader}>
               <div>
+                <Link href="/" className={styles.backHomeButton}>
+                  ← Back to home
+                </Link>
                 <h1 className={styles.pdfTitle}>{project.title}</h1>
                 <p className={styles.pdfSubtitle}>{project.shortDescription}</p>
               </div>
@@ -116,9 +119,11 @@ export default async function ProjectPage({ params }: Props) {
               </a>
             </div>
             <iframe
-              src={`${project.pdfUrl}#toolbar=1&navpanes=1&scrollbar=1`}
+              src={`${project.pdfUrl}#toolbar=1&navpanes=1&scrollbar=1&view=FitH`}
               className={styles.pdfViewer}
               title={`${project.title} Documentation`}
+              allow="fullscreen"
+              loading="lazy"
             />
           </>
         ) : (
